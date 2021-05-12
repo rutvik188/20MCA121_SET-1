@@ -1,0 +1,11 @@
+{
+  "configurations": [
+    {
+      "name": "Launch Chrome",
+      "request": "launch",
+      "type": "pwa-chrome",
+      "url": "file:///Users/rutvik/Desktop/angular/20MCA121_SET-1/Index.html",
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}

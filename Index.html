@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="bootstrap.css" />
+    <title>Index</title>
+  </head>
+  <body>
+    <body>
+        <div ng-app="app" class="container">
+          <div ng-controller="MyController" class="container">
+
+            <div ng-show="!showflag" class="container">
+              <table class="table">
+      
+                <tr>
+                  <th ng-click="reorder('id')">ID</th>
+                  <th ng-click="reorder('fname')">First Name</th>
+                  <th ng-click="reorder('lname')">Last Name</th>
+                  <th ng-click="reorder('math')">Maths</th>
+                  <th ng-click="reorder('sci')">Science</th>
+                  <th ng-click="reorder('eng')">English</th>
+                  <th ng-click="reorder('tot')">Total Marks</th>
+                  <th ng-click="reorder('gmark')">Gracing required</th>
+                  <th>Button</th>
+                </tr>
+                <tr ng-repeat="val in rows | orderBy:orderpram track by $index ">
+                  <td>{{val.id}}</td>
+                  <td>{{val.fname}}</td>
+                  <td>{{val.lname}}</td>
+                  <td>{{val.math}}</td>
+                  <td>{{val.sci}}</td>
+                  <td>{{val.eng}}</td>
+                  <td>{{val.tot}}</td>
+                  <td>{{val.gmark}}</td>
+  
+  
+                  <td>
+                    <button ng-click="RowDelete(val)" class="btn btn-danger">
+                      Delete</button><br />
+                  </td>
+                </tr>
+              </table>
+
+              <br />
+              <button ng-click="showfrom()" class="btn btn-success">Insert Data</button>
+            </div>
+
+            <div ng-show="showflag" class="container">  
+              <h1>MCA-II 20MCA121</h1>
+              <label>ID:</label><br />
+              <input type="text" class="form-control input-sm" ng-model="id" id="id"  />
+              <label>First name:</label><br />
+              <input type="text" class="form-control input-sm" ng-model="fname" id="fname"  />
+              <label>Last name:</label><br />
+              <input type="text" class="form-control input-sm" ng-model="lname" id="lname"  />
+              <label>Maths:</label><br />
+              <input type="number" class="form-control input-group-sm" ng-model="math" id="math" />
+              <label>Science:</label><br />
+              <input type="number" class="form-control input-sm" ng-model="sci" id="sci" />
+              <label>English:</label><br />
+              <input type="number" class="form-control input-sm" ng-model="eng" id="eng"  />
+              <br />
+              <button ng-click="addRow()" class="btn btn-primary">Add Data</button><br />
+              <br />
+              <button ng-click="showtbl()" class="btn btn-success">Show Data</button><br />
+
+
+            </div>
+
+          
+          </div>
+        </div>
+  </body>
+</html>
